@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaidenUK</title>
+  <meta name="description" content="About. I’m Kaiden, creative polymath working across art, STEM, and writing projects." />
+  <style>
+    :root {
+      --bg: #0f1418;
+      --bg-soft: #151c21;
+      --panel: #1b242b;
+      --panel-2: #202b33;
+      --line: rgba(255,255,255,.1);
+      --text: #eef4f7;
+      --muted: #b7c5cd;
+      --accent: #5f7d8c;
+      --accent-2: #86a9bb;
+      --max: 1180px;
+      --shadow: 0 18px 50px rgba(0,0,0,.28);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(95,125,140,.22), transparent 30%),
+        linear-gradient(180deg, #0e1317 0%, #10171c 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(15,20,24,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 72px;
+    }
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: .55rem .85rem;
+      border-radius: 999px;
+      transition: .2s ease;
+      font-size: .95rem;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.06); color: var(--text); }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+      padding: 5.5rem 0 2.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .hero-copy, .hero-media {
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-copy {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 460px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: .5rem;
+      border: 1px solid rgba(134,169,187,.25);
+      background: rgba(95,125,140,.12);
+      color: #d7e4eb;
+      border-radius: 999px;
+      padding: .45rem .8rem;
+      font-size: .88rem;
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.1; }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: -.03em;
+      margin-bottom: .8rem;
+    }
+    .hero p.lead {
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 1.35rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .5rem;
+    }
+    .btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .9rem 1.15rem;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: .2s ease;
+      min-height: 48px;
+    }
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: transparent;
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-media {
+      min-height: 460px;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(6,10,12,.18), rgba(6,10,12,.55)),
+        url('https://upload.wikimedia.org/wikipedia/commons/9/98/Fractal_space.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #30404a, #1a242b);
+    }
+    .hero-badge {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      background: rgba(15,20,24,.78);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 1rem;
+      backdrop-filter: blur(12px);
+    }
+    .hero-badge strong { display: block; margin-bottom: .2rem; }
+
+    section {
+      padding: 2rem 0;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      letter-spacing: -.02em;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card {
+      padding: 1.4rem;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    .about-copy {
+      display: grid;
+      gap: 1rem;
+    }
+    .about-visual {
+      min-height: 320px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #11181d;
+      box-shadow: var(--shadow);
+    }
+    .about-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-tag {
+      color: var(--accent-2);
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+    .about-headline {
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .about-body {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 75ch;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+    .card {
+      grid-column: span 6;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .card.wide { grid-column: span 12; }
+    .media {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #30404a, #1b242b);
+      position: relative;
+      overflow: hidden;
+    }
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .media.image-failed img { display: none; }
+    .media.image-failed::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(95,125,140,.32), rgba(13,19,24,.18));
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      flex: 1;
+    }
+    .card h3, .card h4 {
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      line-height: 1.2;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .42rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: .2rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+    .timeline .card { grid-column: span 12; }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .timeline-meta {
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.5;
+    }
+
+    details.qualifications {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    details.qualifications summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.15rem 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 1.05rem;
+    }
+    details.qualifications summary::-webkit-details-marker { display: none; }
+    details.qualifications summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: var(--accent-2);
+      line-height: 1;
+    }
+    details[open].qualifications summary::after { content: "–"; }
+    .qualifications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 0 1.2rem 1.2rem;
+    }
+    .qualification {
+      padding: 1rem;
+      border-radius: 18px;
+      background: var(--panel-2);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .qualification h4 {
+      font-size: 1.05rem;
+      margin-bottom: .45rem;
+    }
+    .qualification p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+    .qualification a {
+      word-break: break-all;
+      color: #d7e4eb;
+      text-decoration: underline;
+      text-decoration-color: rgba(215,228,235,.4);
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+    }
+    .footer-card {
+      padding: 1.3rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .contact-item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: var(--panel-2);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .contact-item strong {
+      display: block;
+      margin-bottom: .35rem;
+      font-size: .9rem;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .contact-item a, .contact-item span {
+      color: var(--text);
+      text-decoration: none;
+      word-break: break-word;
+    }
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .timeline-entry,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .card { grid-column: span 12; }
+      .qualifications-grid { grid-template-columns: 1fr; }
+      .hero-copy, .hero-media { min-height: auto; }
+    }
+    @media (max-width: 720px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: .8rem 0;
+      }
+      .nav-links { width: 100%; }
+      .nav-links a {
+        padding-inline: .72rem;
+        font-size: .92rem;
+      }
+      .hero { padding-top: 3rem; }
+      .hero-copy { padding: 1.2rem; }
+      .hero-badge { position: static; margin: 1rem; }
+      .about-card, .card-body, .footer-card { padding: 1rem; }
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+      .timeline-entry {
+        gap: .6rem;
+      }
+      .timeline-meta {
+        font-size: .92rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">KaidenUK</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience & Qualifications</a>
+        <a href="#awards">Awards</a>
+        <a href="#artwork">Artwork</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">KaidenUK</div>
+        <h1>Kaiden Jones</h1>
+        <p class="lead">I’m Kaiden, creative polymath working across art, STEM, and writing projects.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#publications">View Publications</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-badge">
+          <strong>Independent creator and systems thinker</strong>
+          <span class="muted">Working across research, technology, and digital art.</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>Rebuilt from the original site content, without the Google Sites export issues.</p>
+        </div>
+        <div class="panel about-card">
+          <div class="about-copy">
+            <div class="about-tag">About</div>
+            <h3 class="about-headline">I’m Kaiden, creative polymath working across art, STEM, and writing projects.</h3>
+            <p class="about-body">Independent creator and systems thinker working across research, technology, and digital art. Develops original frameworks exploring perception, structure, and layered systems, while also building games, tools, and visual projects that bring those ideas into practice. Experienced in both analytical and creative environments, with a focus on clarity, adaptability, and execution. Combines structured thinking with hands-on making, approaching each project with curiosity, precision, and a drive to turn complex ideas into real, working outputs.</p>
+          </div>
+          <figure class="about-visual">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Fractal_space.jpg" alt="Abstract fractal artwork relating to research, technology, and digital creativity" loading="lazy" referrerpolicy="no-referrer">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p>Word-for-word content from the original portfolio, rebuilt into clean responsive cards.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/1_Atlantis.png" alt="2938 Atlantis cover art" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>2938 Atlantis</h3>
+              <p>A fast-paced science fiction novella set in a future where Earth faces collapse from a devastating virus. Following humanity’s desperate escape to the starship Atlantis, the story explores survival, trust, and the fragile line between hope and horror. Blending dystopian tension with speculative imagination, 2938: Atlantis earned national recognition and the Gold Innovation &amp; Creativity Award at the Engage National Awards 2019.</p>
+              <div class="link-row">
+                <a class="btn primary" href="https://www.barnesandnoble.com/w/2938-atlantis-kaiden-jones/1147788907" target="_blank" rel="noreferrer">Read Here</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Typewriter-writed_paper.jpg" alt="At the Creative Writing of Madness visual" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>At the Creative Writing of Madness</h3>
+              <p>A little while back I came across a genre of novel that I had never heard of before. I had stumbled upon the genre of 'Cosmic Horror'. And it would be this genre of novel that would be the biggest thing to changed my perspective on writing to this day.</p>
+              <div class="link-row">
+                <a class="btn secondary" href="https://www.zillowirral.co.uk/latest/at-the-creative-writing-of-madness" target="_blank" rel="noreferrer">Read Here</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Eye_open_close_up.jpg" alt="Gen Z Stare visual" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>The "Gen Z Stare" A Cultural &amp; Psychological Phenomenon</h3>
+              <p>In this paper, I look at the "Gen Z stare" as a novel nonverbal behaviour emerging from internet culture and increasingly recognised in offline social interactions, I define it as a prolonged, neutral, wide eyed gaze with minimal affect in contexts where expressive response is socially expected.</p>
+              <div class="link-row">
+                <a class="btn secondary" href="https://en.wikipedia.org/wiki/Gen_Z_stare#cite_note-11" target="_blank" rel="noreferrer">Read Here</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2896%29.jpg" alt="Half-Silvering Framework visual" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>The Half-Silvering Framework</h3>
+              <p>This is the complecte collection of my works on the HSF.</p>
+              <div class="link-row">
+                <a class="btn secondary" href="https://doi.org/10.5281/zenodo.17150614" target="_blank" rel="noreferrer">The Half-Silvering Framework for Layered Systems in Secure Architectures and AI</a>
+                <a class="btn secondary" href="https://doi.org/10.20944/preprints202507.2550.v1" target="_blank" rel="noreferrer">Half-Silvering Dimensions: A Formal Expansion of Directional Observation Logic in Layered Systems</a>
+                <a class="btn secondary" href="https://biomedgrid.com/pdf/AJBSR.MS.ID.003637.pdf" target="_blank" rel="noreferrer">Asymmetric Definability in Theoretical and Biomedical Models</a>
+                <a class="btn secondary" href="https://gjsfr.org/index.php/gjsfr/article/view/7" target="_blank" rel="noreferrer">Half-Silvering Dimensions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Experience &amp; Qualifications</h2>
+          <p>The main roles are shown first, with the original “View More?” section rebuilt as a normal expandable block.</p>
+        </div>
+
+        <figure class="feature-image">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Lecturehall.JPG" alt="Lecture hall image relating to speaking, consulting, and public work" loading="lazy" referrerpolicy="no-referrer">
+          <figcaption class="caption">A visual anchor for public speaking, consulting, and academic-facing work.</figcaption>
+        </figure>
+
+        <div class="timeline">
+          <article class="card">
+            <div class="card-body timeline-entry">
+              <div class="timeline-meta">
+                <div class="pill">Wirral Council</div>
+                <div>Apr 2025 - Present</div>
+              </div>
+              <div>
+                <h3>WCLC Member</h3>
+                <p>As a member I represent the Wirral Care-Leavers Council in meetings, collaborating with local authorities and stakeholders to advocate for care leavers and improve services in the community.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body timeline-entry">
+              <div class="timeline-meta">
+                <div class="pill">Liverpool Hope University</div>
+                <div>June 2025</div>
+              </div>
+              <div>
+                <h3>Consultant</h3>
+                <p>Invited contributor to an academic report on the Staying Close Programme in the Wirral, Liverpool Hope University.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body timeline-entry">
+              <div class="timeline-meta">
+                <div class="pill">Young Peoples Action Group</div>
+                <div>April 2025</div>
+              </div>
+              <div>
+                <h3>Guest Speaker</h3>
+                <p>Invited as a guest speaker to the Young Peoples Action Group Committee, representing the Wirral Care-Leavers Council.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body timeline-entry">
+              <div class="timeline-meta">
+                <div class="pill">UK Youth Parliament</div>
+                <div>Aug 2021 - Sep 2021</div>
+              </div>
+              <div>
+                <h3>Candidate</h3>
+                <p>I was a candidate for the UKYP for the constituency of the Wirral.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="height: 1rem;"></div>
+
+        <details class="qualifications">
+          <summary>View More?</summary>
+          <div class="qualifications-grid">
+            <article class="qualification">
+              <h4>Climate Change and Renewable Energy</h4>
+              <p>Issuer: The Open University Issued: Aug 2025</p>
+            </article>
+            <article class="qualification">
+              <h4>Simple Coding</h4>
+              <p>Issuer: The Open University Issued: Aug 2025</p>
+            </article>
+            <article class="qualification">
+              <h4>Introduction to Data Analysis</h4>
+              <p>Issuer: Apex Learning Issued: Jan 2025 Credential ID: 378633-397071-156061 Skills: Quantum Computing, Computer Science</p>
+            </article>
+            <article class="qualification">
+              <h4>Social Science</h4>
+              <p>Issuer: Apex Learning Issued: Jan 2025 Credential ID: 378633-420400-156061 Skills: Media Relations, Project Management, Marketing</p>
+            </article>
+            <article class="qualification">
+              <h4>Cultural Anthropology: Explore the Arts</h4>
+              <p>Issuer: Apex Learning Issued: Jun 2022 Credential ID: 378633-396484-156061 Skills: Sociology Of Culture, Social Sciences, Art History, Project Management, Marketing, Design, Art</p>
+            </article>
+            <article class="qualification">
+              <h4>Cultural Anthropology: Explore Gender</h4>
+              <p>Issuer: Apex Learning Issued: Sep 2022 Credential ID: 378633-396521-156061 Skills: Sociology Of Culture, Social Sciences, Project Management</p>
+            </article>
+            <article class="qualification">
+              <h4>Sociology by OpenStax</h4>
+              <p>Issuer: Cursa - Cursos Online Issued: Apr 2022 Credential ID: #1162-21478603 Skills: Media Relations, Sociology Of Culture, Social Sciences, Technical Presentations, Project Management, Marketing</p>
+            </article>
+            <article class="qualification">
+              <h4>Digital Skills Essential (Certificate)</h4>
+              <p>Issuer: Wirral Met College Issued: Sep 2025 Skills: Digital Media, Computer Science</p>
+            </article>
+            <article class="qualification">
+              <h4>Get Started with Media Programme</h4>
+              <p>Issuer: The King's Trust Issued: Feb 2025 Expired: Feb 2025 Skills: Media Relations, Social Media Communications, Digital Media, Social Media Marketing, Social Media, Project Management, Marketing, Design</p>
+            </article>
+            <article class="qualification">
+              <h4>COSHH Leaving Care</h4>
+              <p>Issuer: The Children’s Home Training Hub Issued: Apr 2022 Credential ID: (CLA-LEARNER-YOUNG-PERSON1-202791) Credential URL: <a href="https://www.theleavingcaretraininghub.co.uk/en/course/coshh-leaving-care-online" target="_blank" rel="noreferrer">https://www.theleavingcaretraininghub.co.uk/en/course/coshh-leaving-care-online</a> Skills: Technical Presentations</p>
+            </article>
+            <article class="qualification">
+              <h4>Food Safety and Hygiene Foundation Leaving Care</h4>
+              <p>Issuer: The Children’s Home Training Hub Issued: Apr 2022 Credential ID: (CLA-LEARNER-YOUNG-PERSON1-202791) Credential URL: <a href="https://www.theleavingcaretraininghub.co.uk/en/course/food-safety-and-hygiene-foundation-leaving-care" target="_blank" rel="noreferrer">https://www.theleavingcaretraininghub.co.uk/en/course/food-safety-and-hygiene-foundation-leaving-care</a></p>
+            </article>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="container">
+        <div class="section-head">
+          <h2>Awards</h2>
+          <p>The awards section is preserved as its own block, like the original portfolio.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Trophy_cup.svg/500px-Trophy_cup.svg.png" alt="Innovation and Creativity award visual" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>Gold - Innovation &amp; Creativity</h3>
+              <p>Engage In Their Future Jan 2019</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Award_of_certificate.jpg" alt="Certificate of Success and Achievement visual" loading="lazy" referrerpolicy="no-referrer"></div>
+            <div class="card-body">
+              <h3>Certificate of Success &amp; Achievement</h3>
+              <p>Wirral Council Jan 2026</p>
+              <p>19th Annual YP Award Ceremony</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="artwork">
+      <div class="container">
+        <div class="section-head">
+          <h2>Artwork</h2>
+          <p>Kept as its own section, the same way it appears on the original site.</p>
+        </div>
+        <div class="panel about-card">
+          <div class="about-copy">
+            <div class="about-tag">Artwork</div>
+            <p class="about-body">coming soon :)</p>
+          </div>
+          <figure class="about-visual">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2875%29.jpg" alt="Abstract artwork image used as a visual stand-in for the upcoming artwork section" loading="lazy" referrerpolicy="no-referrer">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="contact">
+      <div class="container">
+        <div class="panel footer-card">
+          <div class="section-head" style="margin-bottom:0;">
+            <h2>Contact</h2>
+            <p>Kaiden Jones . A Portfolio . © Kaiden Jones 2026</p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:contact@kaidenuk.org">contact@kaidenuk.org</a>
+            </div>
+            <div class="contact-item">
+              <strong>Whatsapp</strong>
+              <span>+44 7810 368080</span>
+            </div>
+            <div class="contact-item">
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/kaiden-jones-b0b716224/" target="_blank" rel="noreferrer">kaiden-jones-b0b716224</a>
+            </div>
+            <div class="contact-item">
+              <strong>Google Scholar</strong>
+              <a href="https://scholar.google.com/citations?user=HQ0S9yAAAAAJ&hl=en" target="_blank" rel="noreferrer">Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    for (const img of document.querySelectorAll('img')) {
+      img.addEventListener('error', () => {
+        const media = img.closest('.media');
+        if (media) media.classList.add('image-failed');
+      }, { once: true });
+    }
+  </script>
+</body>
+</html>
