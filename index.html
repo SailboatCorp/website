@@ -1,0 +1,1433 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaiden Jones | KAIDENUK</title>
+  <meta name="description" content="Kaiden Jones. Creative polymath working across art, STEM, writing, philosophy, research, and public-facing creative projects." />
+  <meta name="theme-color" content="#07070b" />
+
+  <meta property="og:title" content="Kaiden Jones | KAIDENUK" />
+  <meta property="og:description" content="Creative polymath working across art, STEM, writing, philosophy, research, and public-facing creative projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaidenuk.org" />
+
+  <style>
+    :root {
+      --bg: #07070b;
+      --bg-2: #101018;
+      --text: #fafaf9;
+      --muted: #a8a29e;
+      --muted-2: #78716c;
+      --line: rgba(255,255,255,.10);
+      --line-2: rgba(255,255,255,.15);
+      --card: rgba(255,255,255,.075);
+      --card-2: rgba(255,255,255,.11);
+      --amber: #fde68a;
+      --sky: #bae6fd;
+      --pink: #fbcfe8;
+      --violet: #ddd6fe;
+      --black: #050508;
+      --shadow: 0 24px 80px rgba(0,0,0,.38);
+      --radius-xl: 1.5rem;
+      --radius-2xl: 2rem;
+      --radius-3xl: 2.5rem;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 14% 12%, rgba(249,204,93,.18), transparent 32%),
+        radial-gradient(circle at 84% 16%, rgba(125,211,252,.15), transparent 34%),
+        radial-gradient(circle at 50% 95%, rgba(244,114,182,.14), transparent 38%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    ::selection {
+      background: var(--amber);
+      color: #000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7,7,11,.78);
+      backdrop-filter: blur(24px);
+    }
+
+    .header-inner {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .brand-mark {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: grid;
+      place-items: center;
+      border-radius: 1rem;
+      color: #000;
+      font-weight: 950;
+      background: linear-gradient(135deg, rgba(253,230,138,.95), rgba(186,230,253,.78), rgba(251,207,232,.85));
+      box-shadow: var(--shadow);
+    }
+
+    .brand-name {
+      display: block;
+      font-size: .85rem;
+      font-weight: 950;
+      letter-spacing: .20em;
+    }
+
+    .brand-route {
+      display: block;
+      margin-top: .08rem;
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+    }
+
+    .nav-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: .62rem 1rem;
+      background: transparent;
+      color: #d6d3d1;
+      font-size: .9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255,255,255,.10);
+      color: #fff;
+    }
+
+    .nav-btn.active {
+      background: #fff;
+      color: #000;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-radius: 999px;
+      width: 2.55rem;
+      height: 2.55rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: var(--bg);
+      padding: .75rem 1rem 1rem;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: .5rem;
+    }
+
+    .mobile-nav .nav-btn {
+      width: 100%;
+      text-align: left;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      padding: .9rem 1rem;
+    }
+
+    main {
+      min-height: 50vh;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 6rem 0;
+    }
+
+    .hero-copy,
+    .hero-media,
+    .section,
+    .card,
+    .publication,
+    .route-card,
+    .footer-card {
+      animation: fadeUp .36s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: .55rem .95rem;
+      color: var(--amber);
+      font-size: .75rem;
+      font-weight: 950;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero-title {
+      max-width: 850px;
+      margin-top: 1.25rem;
+      font-size: clamp(2.7rem, 9vw, 7.4rem);
+      line-height: .92;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      margin-top: 1.5rem;
+      color: #d6d3d1;
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions,
+    .tag-row,
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 2rem;
+    }
+
+    .primary-btn,
+    .ghost-btn,
+    .external-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      border-radius: 999px;
+      padding: .82rem 1.12rem;
+      border: 1px solid var(--line);
+      font-size: .94rem;
+      font-weight: 950;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, color .18s ease;
+      max-width: 100%;
+    }
+
+    .primary-btn {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .primary-btn:hover,
+    .ghost-btn:hover,
+    .external-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .ghost-btn,
+    .external-btn {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+
+    .ghost-btn:hover,
+    .external-btn:hover {
+      background: rgba(255,255,255,.14);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(186,230,253,.18);
+      background: rgba(186,230,253,.09);
+      color: #e0f2fe;
+      border-radius: 999px;
+      padding: .5rem .85rem;
+      font-size: .86rem;
+      font-weight: 800;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: var(--radius-3xl);
+      background: linear-gradient(135deg, rgba(253,230,138,.25), rgba(186,230,253,.15), rgba(251,207,232,.22));
+      filter: blur(40px);
+    }
+
+    .image-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.07);
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel.hero-img {
+      height: 32rem;
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-panel.contain img {
+      object-fit: contain;
+      padding: 1rem;
+    }
+
+    .image-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0,0,0,.68), rgba(0,0,0,.06), transparent);
+    }
+
+    .route-badge {
+      position: absolute;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.50);
+      backdrop-filter: blur(16px);
+      border-radius: 1.35rem;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .9fr .8fr;
+      align-items: end;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow {
+      margin-bottom: .75rem;
+      color: var(--amber);
+      font-size: .75rem;
+      font-weight: 950;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 6vw, 4.5rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 950;
+    }
+
+    .section-text {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+      justify-self: end;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-main {
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+    .card,
+    .publication,
+    .route-card,
+    .small-card,
+    .experience-item,
+    .qualification,
+    .award {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow);
+    }
+
+    .card,
+    .small-card,
+    .experience-item,
+    .qualification,
+    .award {
+      padding: 1.35rem;
+    }
+
+    .route-card,
+    .publication {
+      overflow: hidden;
+    }
+
+    .route-card {
+      text-align: left;
+      color: inherit;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .route-card:hover {
+      transform: translateY(-4px);
+      background: var(--card-2);
+    }
+
+    .route-card .image-panel,
+    .publication .image-panel {
+      height: 14rem;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .kicker {
+      color: var(--amber);
+      font-size: .75rem;
+      font-weight: 950;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      margin-top: .65rem;
+      color: #fff;
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+
+    .card-text {
+      margin-top: .95rem;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .open-line {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.3rem;
+      font-size: .9rem;
+      font-weight: 950;
+    }
+
+    .publication-body {
+      padding: 1.35rem;
+    }
+
+    .experience-item-head,
+    .award-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .date-chip {
+      display: inline-flex;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      padding: .35rem .7rem;
+      color: #d6d3d1;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .qualification {
+      min-width: 0;
+      border-radius: var(--radius-xl);
+    }
+
+    .qualification h3 {
+      font-size: 1.15rem;
+      line-height: 1.15;
+      letter-spacing: -.035em;
+      overflow-wrap: anywhere;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .85rem;
+    }
+
+    .chip {
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: #d6d3d1;
+      padding: .3rem .65rem;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .fine {
+      margin-top: .75rem;
+      color: var(--muted-2);
+      font-size: .78rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .skills {
+      margin-top: .75rem;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .footer {
+      padding: 3.5rem 0 1.75rem;
+    }
+
+    .footer-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius-3xl);
+      padding: 1.7rem;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: .5rem;
+      align-content: center;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.07);
+      padding: .85rem;
+      color: #d6d3d1;
+      transition: background .18s ease, color .18s ease;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-link:hover {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+    }
+
+    .copyright {
+      margin-top: 1.5rem;
+      text-align: center;
+      color: var(--muted-2);
+      font-size: .78rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 0 4rem;
+      }
+
+      .image-panel.hero-img {
+        height: 24rem;
+      }
+
+      .section-head,
+      .footer-card,
+      .grid-main {
+        grid-template-columns: 1fr;
+      }
+
+      .section-text {
+        justify-self: start;
+      }
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        letter-spacing: -.06em;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner,
+      .wrap {
+        width: min(100% - 1rem, var(--max));
+      }
+
+      .brand-name {
+        font-size: .76rem;
+      }
+
+      .brand-route {
+        max-width: 11rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .hero-title {
+        font-size: 2.65rem;
+      }
+
+      .pill {
+        letter-spacing: .12em;
+        font-size: .68rem;
+      }
+
+      .image-panel.hero-img {
+        height: 21rem;
+      }
+
+      .route-badge {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        padding: .85rem;
+        font-size: .98rem;
+      }
+
+      .section {
+        padding: 2.6rem 0;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .primary-btn,
+      .ghost-btn,
+      .external-btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .footer-card {
+        padding: 1.25rem;
+        border-radius: var(--radius-2xl);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <button type="button" class="brand" data-route="home" aria-label="Go to home">
+        <span class="brand-mark">K</span>
+        <span>
+          <span class="brand-name">KAIDENUK</span>
+          <span class="brand-route" id="brandRoute">kaidenuk.org</span>
+        </span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <button type="button" class="nav-btn active" data-route="home">Home</button>
+        <button type="button" class="nav-btn" data-route="science">Science</button>
+        <button type="button" class="nav-btn" data-route="art">Art</button>
+        <button type="button" class="nav-btn" data-route="writing">Writing & Philosophy</button>
+      </nav>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span id="menuIcon">☰</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-inner">
+        <button type="button" class="nav-btn active" data-route="home">Home <span class="brand-route">kaidenuk.org</span></button>
+        <button type="button" class="nav-btn" data-route="science">Science <span class="brand-route">kaidenuk.org/science</span></button>
+        <button type="button" class="nav-btn" data-route="art">Art <span class="brand-route">kaidenuk.org/art</span></button>
+        <button type="button" class="nav-btn" data-route="writing">Writing & Philosophy <span class="brand-route">kaidenuk.org/writing</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-card">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Kaiden Jones</h2>
+        </div>
+
+        <div class="footer-links">
+          <a class="footer-link" href="mailto:contact@kaidenuk.org">✉ contact@kaidenuk.org</a>
+          <a class="footer-link" href="https://uk.linkedin.com/in/kaiden-jones-b0b716224" target="_blank" rel="noreferrer">↗ LinkedIn</a>
+          <a class="footer-link" href="https://scholar.google.com/citations?hl=en&user=HQ0S9yAAAAAJ" target="_blank" rel="noreferrer">↗ Google Scholar</a>
+          <a class="footer-link" href="https://orcid.org/0009-0008-1070-7073" target="_blank" rel="noreferrer">↗ ORCID</a>
+        </div>
+      </div>
+
+      <div class="copyright">Kaiden Jones · kaidenuk.org · © Kaiden Jones 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    const assets = {
+      book2938: "https://blogger.googleusercontent.com/img/a/AVvXsEiOdTnOoZxaTF9aQsaLyIFHhGy-_4XCLYeG6taNBp8UuygbNXELNq-YqijVUOwXveh1hKt7d96JT3AXdzwVzcDjthbFoJp826M8R62Z9b8MSL2hwei2OCA0AnbH8XhJEE5OL7Kpg1NwWkCXU37C4_IwqHXuxzy51Ge5fBzz4iQYSiaj9dMMNyhr3RLLRdc",
+      writing: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Typewriter-writed_paper.jpg",
+      eye: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Eye_open_close_up.jpg",
+      hsf: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2896%29.jpg",
+      experience: "https://blogger.googleusercontent.com/img/a/AVvXsEgK9S64MdTWk6b9lT_Iv5fcUMLCAFFj99zAmmyBM_2csaY4r8ELp8mJVZwBmGJZHpv7t4rmXXPiS_oLKFIaYpwKuov6sdQSiztHq89oVPviUQkT4ZvEA5aVF_zmEp-Y-tD3hPt_iPC30J2yjjdX5eVnq4qsOsBqGPAHkbLpeWDB3w5XtJG0pxYH52EPlwU",
+      trophy: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Trophy_cup.svg/500px-Trophy_cup.svg.png",
+      art: "https://upload.wikimedia.org/wikipedia/commons/8/85/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2875%29.jpg"
+    };
+
+    const links = {
+      barnes: "https://www.barnesandnoble.com/w/2938-atlantis-kaiden-jones/1147788907",
+      zillow: "https://www.zillowirral.co.uk/latest/at-the-creative-writing-of-madness",
+      genz: "https://en.wikipedia.org/wiki/Gen_Z_stare#cite_note-11",
+      zenodo: "https://doi.org/10.5281/zenodo.17150614",
+      preprint: "https://doi.org/10.20944/preprints202507.2550.v1",
+      biomedical: "https://biomedgrid.com/pdf/AJBSR.MS.ID.003637.pdf",
+      gjsfr: "https://journalofscience.org/index.php/GJSFR/article/view/102840"
+    };
+
+    const pages = {
+      home: {
+        label: "Home",
+        route: "kaidenuk.org",
+        icon: "⌂",
+        eyebrow: "KAIDENUK",
+        title: "Kaiden Jones",
+        subtitle: "Creative polymath working across art, STEM, and writing projects.",
+        image: assets.experience,
+        contain: true
+      },
+      science: {
+        label: "Science",
+        route: "kaidenuk.org/science",
+        icon: "◎",
+        eyebrow: "Research · systems · formal models",
+        title: "Science, systems, and the Half-Silvering Framework",
+        subtitle: "Independent research focused on perception, structure, layered systems, asymmetric definability, secure architectures, AI, and interdisciplinary logic.",
+        image: assets.hsf,
+        tags: ["Half-Silvering Framework", "Layered systems", "AI", "Asymmetric definability", "Formal logic"]
+      },
+      art: {
+        label: "Art",
+        route: "kaidenuk.org/art",
+        icon: "✦",
+        eyebrow: "Painting · symbolism · visual projects",
+        title: "Art, emotion, and symbolic structure",
+        subtitle: "Visual work built around confrontation, identity, instability, memory, colour, masks, and the strange pressure of internal conflict.",
+        image: assets.art,
+        tags: ["Painting", "Exhibition cards", "Symbolism", "Emotion", "Visual practice"]
+      },
+      writing: {
+        label: "Writing & Philosophy",
+        route: "kaidenuk.org/writing",
+        icon: "✎",
+        eyebrow: "Books · essays · philosophy",
+        title: "Writing, philosophy, and cultural thought",
+        subtitle: "Fiction, essays, philosophy, cultural analysis, and reflective work on memory, perception, identity, digital legacy, and meaning.",
+        image: assets.book2938,
+        tags: ["2938: Atlantis", "Cosmic horror", "Gen Z stare", "Passing Thoughts", "Philosophy"]
+      }
+    };
+
+    const routeCards = [
+      {
+        key: "science",
+        title: "Science & Research",
+        text: "Half-Silvering Dimensions, asymmetric definability, AI, secure architectures, layered systems, and formal logic.",
+        image: assets.hsf
+      },
+      {
+        key: "art",
+        title: "Art & Visual Work",
+        text: "Painting, exhibition text, visual symbolism, emotional structure, masks, colour, instability, and abstract work.",
+        image: assets.art
+      },
+      {
+        key: "writing",
+        title: "Writing & Philosophy",
+        text: "2938: Atlantis, essays, cosmic horror, the Gen Z stare, Passing Thoughts, and reflective philosophical writing.",
+        image: assets.writing
+      }
+    ];
+
+    const publications = [
+      {
+        title: "2938: Atlantis",
+        type: "Science fiction novella",
+        image: assets.book2938,
+        text: "A science fiction novella set in a future where Earth faces collapse from a devastating virus. Following humanity’s desperate escape to the starship Atlantis, the story explores survival, trust, and the fragile line between hope and horror.",
+        links: [{ label: "Read on Barnes & Noble", href: links.barnes }]
+      },
+      {
+        title: "At the Creative Writing of Madness",
+        type: "Published essay",
+        image: assets.writing,
+        text: "A Zillow Wirral article on cosmic horror, Lovecraftian fiction, incomprehensible beings, and how reading difficult horror helped build vocabulary and confidence in writing.",
+        links: [{ label: "Read article", href: links.zillow }]
+      },
+      {
+        title: "The Gen Z Stare: A Cultural & Psychological Phenomenon",
+        type: "Cultural analysis",
+        image: assets.eye,
+        text: "A paper defining the Gen Z stare as a prolonged, neutral, wide-eyed gaze with minimal affect in contexts where expressive response is socially expected.",
+        links: [{ label: "View citation context", href: links.genz }]
+      },
+      {
+        title: "The Half-Silvering Framework",
+        type: "Research collection",
+        image: assets.hsf,
+        text: "A collection of works on asymmetric observation, layered systems, directional definition, formal logic, secure architectures, AI, and biomedical modelling.",
+        links: [
+          { label: "Layered Systems, Secure Architectures and AI", href: links.zenodo },
+          { label: "Formal Expansion Preprint", href: links.preprint },
+          { label: "Biomedical Models", href: links.biomedical },
+          { label: "Half-Silvering Dimensions", href: links.gjsfr }
+        ]
+      }
+    ];
+
+    const hsfWorks = [
+      {
+        title: "The Half-Silvering Framework for Layered Systems in Secure Architectures and AI",
+        source: "Zenodo · 2025",
+        text: "A research work applying the Half-Silvering Framework to layered systems, secure architectures, and AI.",
+        href: links.zenodo
+      },
+      {
+        title: "Half-Silvering Dimensions: A Formal Expansion of Directional Observation Logic in Layered Systems",
+        source: "Preprints.org · 2025",
+        text: "A formal expansion using truth tables, symbolic language, equations, and simulations to test downward definition propagation.",
+        href: links.preprint
+      },
+      {
+        title: "Beyond Observation: Asymmetric Definability in Theoretical and Biomedical Models",
+        source: "American Journal of Biomedical Science & Research · 2025",
+        text: "An opinion article applying asymmetric definability to theoretical and biomedical modelling.",
+        href: links.biomedical
+      },
+      {
+        title: "Half-Silvering Dimensions",
+        source: "Global Journal of Science Frontier Research · 2024",
+        text: "The original conceptual paper introducing the Half-Silvering Dimensions model.",
+        href: links.gjsfr
+      }
+    ];
+
+    const experience = [
+      {
+        org: "Wirral Council",
+        role: "WCLC Member",
+        date: "Apr 2025 to present",
+        text: "Represents the Wirral Care-Leavers Council in meetings, collaborating with local authorities and stakeholders to advocate for care leavers and improve community services."
+      },
+      {
+        org: "Liverpool Hope University",
+        role: "Consultant",
+        date: "June 2025",
+        text: "Invited contributor to an academic report on the Staying Close Programme in the Wirral."
+      },
+      {
+        org: "Young People's Action Group",
+        role: "Guest Speaker",
+        date: "April 2025",
+        text: "Invited guest speaker to the Young People's Action Group Committee, representing the Wirral Care-Leavers Council."
+      },
+      {
+        org: "UK Youth Parliament",
+        role: "Candidate",
+        date: "Aug 2021 to Sep 2021",
+        text: "Candidate for the UK Youth Parliament for the Wirral constituency."
+      }
+    ];
+
+    const qualifications = [
+      { title: "Digital Skills Essential (Certificate)", issuer: "Wirral Met College", issued: "Sep 2025", skills: "Digital Media, Computer Science" },
+      { title: "Climate Change and Renewable Energy", issuer: "The Open University", issued: "Aug 2025" },
+      { title: "Simple Coding", issuer: "The Open University", issued: "Aug 2025" },
+      { title: "Get Started with Media Programme", issuer: "The King’s Trust", issued: "Feb 2025", status: "Expired Feb 2025", skills: "Media Relations, Social Media Communications, Digital Media, Social Media Marketing, Social Media, Project Management, Marketing, Design" },
+      { title: "Introduction to Data Analysis", issuer: "Apex Learning", issued: "Jan 2025", credential: "378633-397071-156061", skills: "Quantum Computing, Computer Science" },
+      { title: "Social Science", issuer: "Apex Learning", issued: "Jan 2025", credential: "378633-420400-156061", skills: "Media Relations, Project Management, Marketing" },
+      { title: "Cultural Anthropology: Explore Gender", issuer: "Apex Learning", issued: "Sep 2022", credential: "378633-396521-156061", skills: "Sociology of Culture, Social Sciences, Project Management" },
+      { title: "Cultural Anthropology: Explore the Arts", issuer: "Apex Learning", issued: "Jun 2022", credential: "378633-396484-156061", skills: "Sociology of Culture, Social Sciences, Art History, Project Management, Marketing, Design, Art" },
+      { title: "Sociology by OpenStax", issuer: "Cursa - Cursos Online", issued: "Apr 2022", credential: "#1162-21478603", skills: "Media Relations, Sociology of Culture, Social Sciences, Technical Presentations, Project Management, Marketing" },
+      { title: "COSHH Leaving Care", issuer: "The Children’s Home Training Hub", issued: "Apr 2022", credential: "CLA-LEARNER-YOUNG-PERSON1-202791", skills: "Technical Presentations" },
+      { title: "Food Safety and Hygiene Foundation Leaving Care", issuer: "The Children’s Home Training Hub", issued: "Apr 2022", credential: "CLA-LEARNER-YOUNG-PERSON1-202791" }
+    ];
+
+    const awards = [
+      {
+        title: "Gold - Innovation & Creativity",
+        issuer: "Engage in Their Future",
+        date: "Jan 2019",
+        text: "National recognition connected to 2938: Atlantis and creative achievement."
+      },
+      {
+        title: "Certificate of Success & Achievement",
+        issuer: "Wirral Council",
+        date: "Jan 2026",
+        text: "19th Annual YP Award Ceremony."
+      }
+    ];
+
+    const artwork = [
+      {
+        title: "Fighting the Jabberwock",
+        text: "A figure stands in confrontation with an unseen force. The fractured mask and radiating darkness represent fear, identity, and the pressure of internal conflict. The work explores what it feels like to face something larger than yourself, even when the battle cannot be clearly defined."
+      },
+      {
+        title: "How to Hide a Broken Heart",
+        text: "Layers of pink, blue, and dripping paint create a surface that appears playful at first glance, but unstable underneath. The painting reflects the way emotion is often concealed behind colour, humour, or performance. It is about covering damage without truly removing it."
+      },
+      {
+        title: "Temporary",
+        text: "Soft forms emerge and disappear within a dark field of colour. The painting focuses on impermanence, memory, and emotional states that exist only briefly before fading. Nothing in the composition settles completely, mirroring the instability of passing moments."
+      },
+      {
+        title: "Down the Rabbit Hole",
+        text: "Small scattered marks pull the viewer into an almost endless visual space. Inspired by the feeling of spiralling thought, the piece represents curiosity, overstimulation, and losing orientation while searching for meaning."
+      }
+    ];
+
+    const philosophy = [
+      "Digital legacy and the version of a person left behind by platforms, posts, drafts, messages, and archived traces.",
+      "Music and memory, especially how songs become containers for moments that are otherwise difficult to explain.",
+      "Perception at night, where the same space can feel altered by darkness, attention, uncertainty, and emotion.",
+      "Small moments, writing, ego, identity, and the strange value of thoughts that pass before they become fixed."
+    ];
+
+    const app = document.getElementById("app");
+    const brandRoute = document.getElementById("brandRoute");
+    const menuToggle = document.getElementById("menuToggle");
+    const menuIcon = document.getElementById("menuIcon");
+    const mobileNav = document.getElementById("mobileNav");
+
+    const routeFromHash = () => {
+      const hash = window.location.hash.replace("#", "").trim().toLowerCase();
+      return ["science", "art", "writing"].includes(hash) ? hash : "home";
+    };
+
+    let currentRoute = routeFromHash();
+
+    function escapeHTML(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function imagePanel(src, alt, extra = "", contain = false) {
+      return `
+        <div class="image-panel ${extra} ${contain ? "contain" : ""}">
+          <img src="${escapeHTML(src)}" alt="${escapeHTML(alt)}" loading="lazy">
+        </div>
+      `;
+    }
+
+    function externalButton(link) {
+      return `<a class="external-btn" href="${escapeHTML(link.href)}" target="_blank" rel="noreferrer">${escapeHTML(link.label)} ↗</a>`;
+    }
+
+    function hero(pageKey, actions = "") {
+      const page = pages[pageKey];
+      const tags = page.tags ? `<div class="tag-row">${page.tags.map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div>` : "";
+      return `
+        <section class="wrap hero">
+          <div class="hero-copy">
+            <div class="pill">${page.icon} ${escapeHTML(page.eyebrow)}</div>
+            <h1 class="hero-title">${escapeHTML(page.title)}</h1>
+            <p class="hero-text">${escapeHTML(page.subtitle)}</p>
+            ${actions}
+            ${tags}
+          </div>
+
+          <div class="hero-media">
+            ${imagePanel(page.image, page.label + " visual", "hero-img", page.contain)}
+            ${pageKey === "home" ? "" : `<div class="route-badge">${escapeHTML(page.route)}</div>`}
+          </div>
+        </section>
+      `;
+    }
+
+    function section(eyebrow, title, content, text = "") {
+      return `
+        <section class="wrap section">
+          <div class="section-head">
+            <div>
+              ${eyebrow ? `<div class="eyebrow">${escapeHTML(eyebrow)}</div>` : ""}
+              <h2 class="section-title">${escapeHTML(title)}</h2>
+            </div>
+            ${text ? `<p class="section-text">${escapeHTML(text)}</p>` : ""}
+          </div>
+          ${content}
+        </section>
+      `;
+    }
+
+    function miniCard(item) {
+      return `
+        <article class="card">
+          ${item.kicker ? `<div class="kicker">${escapeHTML(item.kicker)}</div>` : ""}
+          <h3 class="card-title">${escapeHTML(item.title)}</h3>
+          <p class="card-text">${escapeHTML(item.text)}</p>
+        </article>
+      `;
+    }
+
+    function publicationCard(item) {
+      return `
+        <article class="publication">
+          ${imagePanel(item.image, item.title)}
+          <div class="publication-body">
+            <div class="kicker">${escapeHTML(item.type)}</div>
+            <h3 class="card-title">${escapeHTML(item.title)}</h3>
+            <p class="card-text">${escapeHTML(item.text)}</p>
+            <div class="link-row">${item.links.map(externalButton).join("")}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    function experienceItem(item) {
+      return `
+        <article class="experience-item">
+          <div class="experience-item-head">
+            <div>
+              <div class="kicker">${escapeHTML(item.org)}</div>
+              <h3 class="card-title">${escapeHTML(item.role)}</h3>
+            </div>
+            <span class="date-chip">${escapeHTML(item.date)}</span>
+          </div>
+          <p class="card-text">${escapeHTML(item.text)}</p>
+        </article>
+      `;
+    }
+
+    function qualificationCard(q) {
+      return `
+        <article class="qualification">
+          <div class="kicker">${escapeHTML(q.issuer)}</div>
+          <h3>${escapeHTML(q.title)}</h3>
+          <div class="chip-row">
+            <span class="chip">Issued: ${escapeHTML(q.issued)}</span>
+            ${q.status ? `<span class="chip">${escapeHTML(q.status)}</span>` : ""}
+          </div>
+          ${q.credential ? `<p class="fine">Credential ID: ${escapeHTML(q.credential)}</p>` : ""}
+          ${q.skills ? `<p class="skills">Skills: ${escapeHTML(q.skills)}</p>` : ""}
+        </article>
+      `;
+    }
+
+    function awardsBlock() {
+      return section("Awards", "Awards and recognition.", `
+        <div class="grid grid-main">
+          ${imagePanel(assets.trophy, "Trophy image", "", true)}
+          <div class="grid">
+            ${awards.map(award => `
+              <article class="award">
+                <div class="award-head">
+                  <div>
+                    <div class="kicker">${escapeHTML(award.issuer)}</div>
+                    <h3 class="card-title">${escapeHTML(award.title)}</h3>
+                  </div>
+                  <span class="date-chip">${escapeHTML(award.date)}</span>
+                </div>
+                <p class="card-text">${escapeHTML(award.text)}</p>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+      `);
+    }
+
+    function experienceAndQualifications() {
+      return section("Experience & qualifications", "Public work, learning, and certificates.", `
+        <div class="grid grid-main">
+          <div class="grid">
+            ${imagePanel(assets.experience, "Kaiden Jones experience visual", "", true)}
+            ${experience.map(experienceItem).join("")}
+          </div>
+          <div class="grid grid-2">
+            ${qualifications.map(qualificationCard).join("")}
+          </div>
+        </div>
+      `);
+    }
+
+    function renderHome() {
+      return `
+        ${hero("home", `
+          <div class="hero-actions">
+            <button type="button" class="primary-btn" data-route="science">Science</button>
+            <button type="button" class="ghost-btn" data-route="art">Art</button>
+            <button type="button" class="ghost-btn" data-route="writing">Writing & Philosophy</button>
+          </div>
+        `)}
+
+        ${section("Choose a route", "What are you here for?", `
+          <div class="grid grid-3">
+            ${routeCards.map(card => `
+              <button type="button" class="route-card" data-route="${card.key}">
+                ${imagePanel(card.image, card.title)}
+                <div class="publication-body">
+                  <div class="kicker">${escapeHTML(pages[card.key].label)}</div>
+                  <h3 class="card-title">${escapeHTML(card.title)}</h3>
+                  <p class="card-text">${escapeHTML(card.text)}</p>
+                  <span class="open-line">Open →</span>
+                </div>
+              </button>
+            `).join("")}
+          </div>
+        `)}
+
+        ${section("About", "Independent creator and systems thinker.", `
+          <div class="grid grid-3">
+            ${miniCard({ kicker: "STEM", title: "Research", text: "Original frameworks exploring perception, structure, layered systems, AI, secure architectures, and asymmetric definability." })}
+            ${miniCard({ kicker: "Creative work", title: "Making", text: "Games, tools, visual projects, paintings, card-builder concepts, and digital experiments that turn ideas into working outputs." })}
+            ${miniCard({ kicker: "Books and essays", title: "Writing", text: "Science fiction, cosmic horror, cultural analysis, philosophy, and reflective writing on memory, identity, perception, and meaning." })}
+          </div>
+        `)}
+
+        ${section("Selected work", "Publications and projects.", `
+          <div class="grid grid-2">
+            ${publications.map(publicationCard).join("")}
+          </div>
+        `)}
+
+        ${experienceAndQualifications()}
+        ${awardsBlock()}
+      `;
+    }
+
+    function renderScience() {
+      return `
+        ${hero("science")}
+
+        ${section("Research focus", "The framework in plain terms.", `
+          <div class="grid grid-3">
+            ${miniCard({ kicker: "Rule", title: "Observation is directional.", text: "Higher-order layers can observe or define lower layers. Lower layers cannot define higher layers." })}
+            ${miniCard({ kicker: "Rule", title: "Observation is neutral.", text: "Observation means interaction or state-definition. It does not require human awareness or consciousness." })}
+            ${miniCard({ kicker: "Rule", title: "Self-observation is allowed.", text: "A layer can register or validate its own state. In the formal matrix, self-observation is marked as true." })}
+          </div>
+        `)}
+
+        ${section("Half-Silvering works", "Research collection.", `
+          <div class="grid grid-2">
+            ${hsfWorks.map(work => `
+              <article class="card">
+                <div class="kicker">${escapeHTML(work.source)}</div>
+                <h3 class="card-title">${escapeHTML(work.title)}</h3>
+                <p class="card-text">${escapeHTML(work.text)}</p>
+                <div class="link-row">${externalButton({ label: "Open work", href: work.href })}</div>
+              </article>
+            `).join("")}
+          </div>
+        `)}
+
+        ${section("Public work", "Experience connected to advocacy and research.", `
+          <div class="grid grid-main">
+            ${imagePanel(assets.experience, "Kaiden Jones public work visual", "", true)}
+            <div class="grid">
+              ${experience.map(experienceItem).join("")}
+            </div>
+          </div>
+        `)}
+      `;
+    }
+
+    function renderArt() {
+      return `
+        ${hero("art")}
+
+        ${section("Artwork", "Selected exhibition text.", `
+          <div class="grid grid-2">
+            ${artwork.map(piece => `
+              <article class="card">
+                <div class="kicker">Artwork</div>
+                <h3 class="card-title">${escapeHTML(piece.title)}</h3>
+                <p class="card-text">${escapeHTML(piece.text)}</p>
+              </article>
+            `).join("")}
+          </div>
+        `)}
+
+        ${section("Practice", "The visual thread.", `
+          <div class="grid grid-3">
+            ${miniCard({ kicker: "Theme", title: "Confrontation", text: "Figures, masks, pressure, fear, and the feeling of standing against something that cannot be fully named." })}
+            ${miniCard({ kicker: "Theme", title: "Concealment", text: "Colour, humour, performance, and surface brightness used to cover damage without removing it." })}
+            ${miniCard({ kicker: "Theme", title: "Impermanence", text: "Forms that appear and disappear, reflecting memory, temporary states, and moments that refuse to settle." })}
+          </div>
+        `)}
+      `;
+    }
+
+    function renderWriting() {
+      const writingPublications = publications.filter(item => item.title !== "The Half-Silvering Framework");
+      return `
+        ${hero("writing")}
+
+        ${section("Writing", "Books, essays, and cultural analysis.", `
+          <div class="grid grid-2">
+            ${writingPublications.map(publicationCard).join("")}
+          </div>
+        `)}
+
+        ${section("Philosophy", "Passing Thoughts and recurring themes.", `
+          <div class="grid grid-2">
+            ${philosophy.map(item => `<div class="card"><p class="card-text" style="margin-top:0;color:#d6d3d1">${escapeHTML(item)}</p></div>`).join("")}
+          </div>
+        `)}
+
+        ${section("Identity", "Writing as the bridge.", `
+          <div class="card" style="border-radius:2.5rem;padding:clamp(1.5rem,4vw,2.5rem)">
+            <p style="max-width:900px;font-size:clamp(1.5rem,4vw,2.6rem);line-height:1.12;letter-spacing:-.035em;font-weight:950">
+              The work asks the same kind of question in different forms: what defines a thing, what hides underneath it, and what remains when the surface changes?
+            </p>
+          </div>
+        `)}
+      `;
+    }
+
+    function closeMenu() {
+      mobileNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuIcon.textContent = "☰";
+    }
+
+    function updateActiveButtons(route) {
+      document.querySelectorAll("[data-route]").forEach(el => {
+        if (el.classList.contains("nav-btn")) {
+          el.classList.toggle("active", el.dataset.route === route);
+        }
+      });
+      brandRoute.textContent = pages[route].route;
+    }
+
+    function render(route) {
+      currentRoute = route;
+      updateActiveButtons(route);
+      app.innerHTML = route === "science" ? renderScience()
+        : route === "art" ? renderArt()
+        : route === "writing" ? renderWriting()
+        : renderHome();
+
+      document.title = route === "home"
+        ? "Kaiden Jones | KAIDENUK"
+        : `${pages[route].label} | Kaiden Jones`;
+
+      bindRouteButtons();
+    }
+
+    function goTo(route, pushHash = true) {
+      const safeRoute = pages[route] ? route : "home";
+      if (pushHash) {
+        const hash = safeRoute === "home" ? "" : `#${safeRoute}`;
+        if (window.location.hash !== hash) {
+          history.pushState(null, "", hash || window.location.pathname);
+        }
+      }
+
+      closeMenu();
+      render(safeRoute);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function bindRouteButtons() {
+      document.querySelectorAll("[data-route]").forEach(el => {
+        if (el.dataset.bound === "true") return;
+        el.dataset.bound = "true";
+        el.addEventListener("click", () => goTo(el.dataset.route));
+      });
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuIcon.textContent = isOpen ? "×" : "☰";
+    });
+
+    window.addEventListener("popstate", () => {
+      render(routeFromHash());
+      window.scrollTo({ top: 0 });
+    });
+
+    window.addEventListener("hashchange", () => {
+      const route = routeFromHash();
+      if (route !== currentRoute) {
+        render(route);
+        window.scrollTo({ top: 0 });
+      }
+    });
+
+    bindRouteButtons();
+    render(currentRoute);
+  </script>
+</body>
+</html>
