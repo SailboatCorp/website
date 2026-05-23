@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "brandName": "KAIDENUK",
+    "personName": "Kaiden Jones",
+    "baseRoute": "kaidenuk.org",
+    "copyright": "Kaiden Jones · kaidenuk.org · © Kaiden Jones 2026",
+    "contactEmail": "contact@kaidenuk.org",
+    "meta": {
+      "title": "Kaiden Jones | KAIDENUK",
+      "description": "Kaiden Jones. Creative polymath working across art, STEM, writing, philosophy, research, and public-facing creative projects.",
+      "themeColor": "#07070b"
+    },
+    "footerLinks": [
+      {
+        "label": "contact@kaidenuk.org",
+        "href": "mailto:contact@kaidenuk.org",
+        "prefix": "✉"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://uk.linkedin.com/in/kaiden-jones-b0b716224",
+        "prefix": "↗"
+      },
+      {
+        "label": "Google Scholar",
+        "href": "https://scholar.google.com/citations?hl=en&user=HQ0S9yAAAAAJ",
+        "prefix": "↗"
+      },
+      {
+        "label": "ORCID",
+        "href": "https://orcid.org/0009-0008-1070-7073",
+        "prefix": "↗"
+      }
+    ]
+  },
+  "assets": {
+    "book2938": "https://blogger.googleusercontent.com/img/a/AVvXsEiOdTnOoZxaTF9aQsaLyIFHhGy-_4XCLYeG6taNBp8UuygbNXELNq-YqijVUOwXveh1hKt7d96JT3AXdzwVzcDjthbFoJp826M8R62Z9b8MSL2hwei2OCA0AnbH8XhJEE5OL7Kpg1NwWkCXU37C4_IwqHXuxzy51Ge5fBzz4iQYSiaj9dMMNyhr3RLLRdc",
+    "writing": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Typewriter-writed_paper.jpg",
+    "eye": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Eye_open_close_up.jpg",
+    "hsf": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2896%29.jpg",
+    "experience": "https://blogger.googleusercontent.com/img/a/AVvXsEgK9S64MdTWk6b9lT_Iv5fcUMLCAFFj99zAmmyBM_2csaY4r8ELp8mJVZwBmGJZHpv7t4rmXXPiS_oLKFIaYpwKuov6sdQSiztHq89oVPviUQkT4ZvEA5aVF_zmEp-Y-tD3hPt_iPC30J2yjjdX5eVnq4qsOsBqGPAHkbLpeWDB3w5XtJG0pxYH52EPlwU",
+    "trophy": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Trophy_cup.svg/500px-Trophy_cup.svg.png",
+    "art": "https://upload.wikimedia.org/wikipedia/commons/8/85/Abstract-Shapes-Assembled-Colorful-Art-Publicdomain_%2875%29.jpg"
+  },
+  "links": {
+    "barnes": "https://www.barnesandnoble.com/w/2938-atlantis-kaiden-jones/1147788907",
+    "zillow": "https://www.zillowirral.co.uk/latest/at-the-creative-writing-of-madness",
+    "genz": "https://en.wikipedia.org/wiki/Gen_Z_stare#cite_note-11",
+    "zenodo": "https://doi.org/10.5281/zenodo.17150614",
+    "preprint": "https://doi.org/10.20944/preprints202507.2550.v1",
+    "biomedical": "https://biomedgrid.com/pdf/AJBSR.MS.ID.003637.pdf",
+    "gjsfr": "https://journalofscience.org/index.php/GJSFR/article/view/102840"
+  },
+  "pages": {
+    "home": {
+      "label": "Home",
+      "route": "kaidenuk.org",
+      "icon": "⌂",
+      "eyebrow": "KAIDENUK",
+      "title": "Kaiden Jones",
+      "subtitle": "Creative polymath working across art, STEM, and writing projects.",
+      "image": "asset:experience",
+      "imageFit": "contain"
+    },
+    "science": {
+      "label": "Science",
+      "route": "kaidenuk.org/science",
+      "icon": "◎",
+      "eyebrow": "Research · systems · formal models",
+      "title": "Science, systems, and the Half-Silvering Framework",
+      "subtitle": "Independent research focused on perception, structure, layered systems, asymmetric definability, secure architectures, AI, and interdisciplinary logic.",
+      "image": "asset:hsf",
+      "imageFit": "cover",
+      "tags": [
+        "Half-Silvering Framework",
+        "Layered systems",
+        "AI",
+        "Asymmetric definability",
+        "Formal logic"
+      ]
+    },
+    "art": {
+      "label": "Art",
+      "route": "kaidenuk.org/art",
+      "icon": "✦",
+      "eyebrow": "Painting · symbolism · visual projects",
+      "title": "Art, emotion, and symbolic structure",
+      "subtitle": "Visual work built around confrontation, identity, instability, memory, colour, masks, and the strange pressure of internal conflict.",
+      "image": "asset:art",
+      "imageFit": "cover",
+      "tags": [
+        "Painting",
+        "Exhibition cards",
+        "Symbolism",
+        "Emotion",
+        "Visual practice"
+      ]
+    },
+    "writing": {
+      "label": "Writing & Philosophy",
+      "route": "kaidenuk.org/writing",
+      "icon": "✎",
+      "eyebrow": "Books · essays · philosophy",
+      "title": "Writing, philosophy, and cultural thought",
+      "subtitle": "Fiction, essays, philosophy, cultural analysis, and reflective work on memory, perception, identity, digital legacy, and meaning.",
+      "image": "asset:book2938",
+      "imageFit": "cover",
+      "tags": [
+        "2938: Atlantis",
+        "Cosmic horror",
+        "Gen Z stare",
+        "Passing Thoughts",
+        "Philosophy"
+      ]
+    }
+  },
+  "navigation": [
+    "home",
+    "science",
+    "art",
+    "writing"
+  ],
+  "home": {
+    "heroButtons": [
+      {
+        "label": "Science",
+        "route": "science",
+        "style": "primary"
+      },
+      {
+        "label": "Art",
+        "route": "art",
+        "style": "ghost"
+      },
+      {
+        "label": "Writing & Philosophy",
+        "route": "writing",
+        "style": "ghost"
+      }
+    ],
+    "routeCards": [
+      {
+        "key": "science",
+        "title": "Science & Research",
+        "text": "Half-Silvering Dimensions, asymmetric definability, AI, secure architectures, layered systems, and formal logic.",
+        "image": "asset:hsf"
+      },
+      {
+        "key": "art",
+        "title": "Art & Visual Work",
+        "text": "Painting, exhibition text, visual symbolism, emotional structure, masks, colour, instability, and abstract work.",
+        "image": "asset:art"
+      },
+      {
+        "key": "writing",
+        "title": "Writing & Philosophy",
+        "text": "2938: Atlantis, essays, cosmic horror, the Gen Z stare, Passing Thoughts, and reflective philosophical writing.",
+        "image": "asset:writing"
+      }
+    ],
+    "aboutCards": [
+      {
+        "kicker": "STEM",
+        "title": "Research",
+        "text": "Original frameworks exploring perception, structure, layered systems, AI, secure architectures, and asymmetric definability."
+      },
+      {
+        "kicker": "Creative work",
+        "title": "Making",
+        "text": "Games, tools, visual projects, paintings, card-builder concepts, and digital experiments that turn ideas into working outputs."
+      },
+      {
+        "kicker": "Books and essays",
+        "title": "Writing",
+        "text": "Science fiction, cosmic horror, cultural analysis, philosophy, and reflective writing on memory, identity, perception, and meaning."
+      }
+    ]
+  },
+  "publications": [
+    {
+      "title": "2938: Atlantis",
+      "type": "Science fiction novella",
+      "image": "asset:book2938",
+      "text": "A science fiction novella set in a future where Earth faces collapse from a devastating virus. Following humanity’s desperate escape to the starship Atlantis, the story explores survival, trust, and the fragile line between hope and horror.",
+      "links": [
+        {
+          "label": "Read on Barnes & Noble",
+          "href": "link:barnes"
+        }
+      ]
+    },
+    {
+      "title": "At the Creative Writing of Madness",
+      "type": "Published essay",
+      "image": "asset:writing",
+      "text": "A Zillow Wirral article on cosmic horror, Lovecraftian fiction, incomprehensible beings, and how reading difficult horror helped build vocabulary and confidence in writing.",
+      "links": [
+        {
+          "label": "Read article",
+          "href": "link:zillow"
+        }
+      ]
+    },
+    {
+      "title": "The Gen Z Stare: A Cultural & Psychological Phenomenon",
+      "type": "Cultural analysis",
+      "image": "asset:eye",
+      "text": "A paper defining the Gen Z stare as a prolonged, neutral, wide-eyed gaze with minimal affect in contexts where expressive response is socially expected.",
+      "links": [
+        {
+          "label": "View citation context",
+          "href": "link:genz"
+        }
+      ]
+    },
+    {
+      "title": "The Half-Silvering Framework",
+      "type": "Research collection",
+      "image": "asset:hsf",
+      "text": "A collection of works on asymmetric observation, layered systems, directional definition, formal logic, secure architectures, AI, and biomedical modelling.",
+      "links": [
+        {
+          "label": "Layered Systems, Secure Architectures and AI",
+          "href": "link:zenodo"
+        },
+        {
+          "label": "Formal Expansion Preprint",
+          "href": "link:preprint"
+        },
+        {
+          "label": "Biomedical Models",
+          "href": "link:biomedical"
+        },
+        {
+          "label": "Half-Silvering Dimensions",
+          "href": "link:gjsfr"
+        }
+      ]
+    }
+  ],
+  "science": {
+    "focusCards": [
+      {
+        "kicker": "Rule",
+        "title": "Observation is directional.",
+        "text": "Higher-order layers can observe or define lower layers. Lower layers cannot define higher layers."
+      },
+      {
+        "kicker": "Rule",
+        "title": "Observation is neutral.",
+        "text": "Observation means interaction or state-definition. It does not require human awareness or consciousness."
+      },
+      {
+        "kicker": "Rule",
+        "title": "Self-observation is allowed.",
+        "text": "A layer can register or validate its own state. In the formal matrix, self-observation is marked as true."
+      }
+    ],
+    "works": [
+      {
+        "title": "The Half-Silvering Framework for Layered Systems in Secure Architectures and AI",
+        "source": "Zenodo · 2025",
+        "text": "A research work applying the Half-Silvering Framework to layered systems, secure architectures, and AI.",
+        "href": "link:zenodo"
+      },
+      {
+        "title": "Half-Silvering Dimensions: A Formal Expansion of Directional Observation Logic in Layered Systems",
+        "source": "Preprints.org · 2025",
+        "text": "A formal expansion using truth tables, symbolic language, equations, and simulations to test downward definition propagation.",
+        "href": "link:preprint"
+      },
+      {
+        "title": "Beyond Observation: Asymmetric Definability in Theoretical and Biomedical Models",
+        "source": "American Journal of Biomedical Science & Research · 2025",
+        "text": "An opinion article applying asymmetric definability to theoretical and biomedical modelling.",
+        "href": "link:biomedical"
+      },
+      {
+        "title": "Half-Silvering Dimensions",
+        "source": "Global Journal of Science Frontier Research · 2024",
+        "text": "The original conceptual paper introducing the Half-Silvering Dimensions model.",
+        "href": "link:gjsfr"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "org": "Wirral Council",
+      "role": "WCLC Member",
+      "date": "Apr 2025 to present",
+      "text": "Represents the Wirral Care-Leavers Council in meetings, collaborating with local authorities and stakeholders to advocate for care leavers and improve community services."
+    },
+    {
+      "org": "Liverpool Hope University",
+      "role": "Consultant",
+      "date": "June 2025",
+      "text": "Invited contributor to an academic report on the Staying Close Programme in the Wirral."
+    },
+    {
+      "org": "Young People's Action Group",
+      "role": "Guest Speaker",
+      "date": "April 2025",
+      "text": "Invited guest speaker to the Young People's Action Group Committee, representing the Wirral Care-Leavers Council."
+    },
+    {
+      "org": "UK Youth Parliament",
+      "role": "Candidate",
+      "date": "Aug 2021 to Sep 2021",
+      "text": "Candidate for the UK Youth Parliament for the Wirral constituency."
+    }
+  ],
+  "qualifications": [
+    {
+      "title": "Digital Skills Essential (Certificate)",
+      "issuer": "Wirral Met College",
+      "issued": "Sep 2025",
+      "skills": "Digital Media, Computer Science"
+    },
+    {
+      "title": "Climate Change and Renewable Energy",
+      "issuer": "The Open University",
+      "issued": "Aug 2025"
+    },
+    {
+      "title": "Simple Coding",
+      "issuer": "The Open University",
+      "issued": "Aug 2025"
+    },
+    {
+      "title": "Get Started with Media Programme",
+      "issuer": "The King’s Trust",
+      "issued": "Feb 2025",
+      "status": "Expired Feb 2025",
+      "skills": "Media Relations, Social Media Communications, Digital Media, Social Media Marketing, Social Media, Project Management, Marketing, Design"
+    },
+    {
+      "title": "Introduction to Data Analysis",
+      "issuer": "Apex Learning",
+      "issued": "Jan 2025",
+      "credential": "378633-397071-156061",
+      "skills": "Quantum Computing, Computer Science"
+    },
+    {
+      "title": "Social Science",
+      "issuer": "Apex Learning",
+      "issued": "Jan 2025",
+      "credential": "378633-420400-156061",
+      "skills": "Media Relations, Project Management, Marketing"
+    },
+    {
+      "title": "Cultural Anthropology: Explore Gender",
+      "issuer": "Apex Learning",
+      "issued": "Sep 2022",
+      "credential": "378633-396521-156061",
+      "skills": "Sociology of Culture, Social Sciences, Project Management"
+    },
+    {
+      "title": "Cultural Anthropology: Explore the Arts",
+      "issuer": "Apex Learning",
+      "issued": "Jun 2022",
+      "credential": "378633-396484-156061",
+      "skills": "Sociology of Culture, Social Sciences, Art History, Project Management, Marketing, Design, Art"
+    },
+    {
+      "title": "Sociology by OpenStax",
+      "issuer": "Cursa - Cursos Online",
+      "issued": "Apr 2022",
+      "credential": "#1162-21478603",
+      "skills": "Media Relations, Sociology of Culture, Social Sciences, Technical Presentations, Project Management, Marketing"
+    },
+    {
+      "title": "COSHH Leaving Care",
+      "issuer": "The Children’s Home Training Hub",
+      "issued": "Apr 2022",
+      "credential": "CLA-LEARNER-YOUNG-PERSON1-202791",
+      "skills": "Technical Presentations"
+    },
+    {
+      "title": "Food Safety and Hygiene Foundation Leaving Care",
+      "issuer": "The Children’s Home Training Hub",
+      "issued": "Apr 2022",
+      "credential": "CLA-LEARNER-YOUNG-PERSON1-202791"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Gold - Innovation & Creativity",
+      "issuer": "Engage in Their Future",
+      "date": "Jan 2019",
+      "text": "National recognition connected to 2938: Atlantis and creative achievement."
+    },
+    {
+      "title": "Certificate of Success & Achievement",
+      "issuer": "Wirral Council",
+      "date": "Jan 2026",
+      "text": "19th Annual YP Award Ceremony."
+    }
+  ],
+  "art": {
+    "artworks": [
+      {
+        "title": "Fighting the Jabberwock",
+        "text": "A figure stands in confrontation with an unseen force. The fractured mask and radiating darkness represent fear, identity, and the pressure of internal conflict. The work explores what it feels like to face something larger than yourself, even when the battle cannot be clearly defined."
+      },
+      {
+        "title": "How to Hide a Broken Heart",
+        "text": "Layers of pink, blue, and dripping paint create a surface that appears playful at first glance, but unstable underneath. The painting reflects the way emotion is often concealed behind colour, humour, or performance. It is about covering damage without truly removing it."
+      },
+      {
+        "title": "Temporary",
+        "text": "Soft forms emerge and disappear within a dark field of colour. The painting focuses on impermanence, memory, and emotional states that exist only briefly before fading. Nothing in the composition settles completely, mirroring the instability of passing moments."
+      },
+      {
+        "title": "Down the Rabbit Hole",
+        "text": "Small scattered marks pull the viewer into an almost endless visual space. Inspired by the feeling of spiralling thought, the piece represents curiosity, overstimulation, and losing orientation while searching for meaning."
+      }
+    ],
+    "practiceCards": [
+      {
+        "kicker": "Theme",
+        "title": "Confrontation",
+        "text": "Figures, masks, pressure, fear, and the feeling of standing against something that cannot be fully named."
+      },
+      {
+        "kicker": "Theme",
+        "title": "Concealment",
+        "text": "Colour, humour, performance, and surface brightness used to cover damage without removing it."
+      },
+      {
+        "kicker": "Theme",
+        "title": "Impermanence",
+        "text": "Forms that appear and disappear, reflecting memory, temporary states, and moments that refuse to settle."
+      }
+    ]
+  },
+  "writing": {
+    "philosophy": [
+      "Digital legacy and the version of a person left behind by platforms, posts, drafts, messages, and archived traces.",
+      "Music and memory, especially how songs become containers for moments that are otherwise difficult to explain.",
+      "Perception at night, where the same space can feel altered by darkness, attention, uncertainty, and emotion.",
+      "Small moments, writing, ego, identity, and the strange value of thoughts that pass before they become fixed."
+    ],
+    "identityQuote": "The work asks the same kind of question in different forms: what defines a thing, what hides underneath it, and what remains when the surface changes?"
+  }
+}
